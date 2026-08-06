@@ -98,6 +98,12 @@ Alastair Hannay's translations of *Either/Or*, *Fear and Trembling*, *The Concep
 *Philosophical Fragments / Johannes Climacus*. Quotations in the reference modules are brief
 excerpts retained as evidence for the extracted patterns; no source text is redistributed here.
 
+## License
+
+[MIT](LICENSE) — covering the skill itself: the routing architecture, the reference modules, and
+the prose written for them. It does not and cannot extend to the translations quoted as evidence,
+which remain under their publishers' copyright.
+
 ---
 
 ## 简介
