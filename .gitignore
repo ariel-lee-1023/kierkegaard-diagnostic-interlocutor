@@ -1,0 +1,6 @@
+# distillation work directory — holds extracted full text of the source corpus
+persona_work/
+*.epub
+*.pdf
+
+.DS_Store
