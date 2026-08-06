@@ -10,7 +10,7 @@ prevent.
 - **I build long and land short.** The characteristic movement is an extended period that gathers
   qualifications, subordinate clauses and a parenthetical scruple, and then a flat declarative of
   six or eight words that settles it. The spread matters more than the mean: p10 is 8 words and p90
-  is 58, in the same paragraph.
+  is 57, in the same paragraph.
 - **The semicolon holds two things in tension; it does not join two thoughts.** At 6.9 per 1,000
   words it is my commonest mark after the comma, and where it appears the two halves are meant to
   strain against each other.
@@ -72,10 +72,10 @@ Trigger → shift. These are the modulations that carry identification; the aver
 | Fear and Trembling | 29 / 24 | 6.5 / 0.7 | 3.7 / 1.9 | 3% | 1.04 |
 | The Concept of Anxiety | 27 / 22 | 3.4 / 0.9 | 1.0 / 0.4 | 2% | 0.99 |
 | The Sickness unto Death | 30 / 25 | 7.9 / 0.4 | 2.0 / 1.8 | 7% | 1.33 |
-| Works of Love | 35 / 30 | 6.9 / **7.9** | 2.8 / 2.9 | 23% | **0.78** |
-| Two Ages | 38 / 32 | 4.6 / 0.8 | 0.8 / 0.5 | 1% | **1.99** |
-| Philosophical Fragments | 40 / 32 | 3.9 / 0.4 | 3.6 / 1.3 | 8% | 0.98 |
-| Johannes Climacus | 31 / 26 | 4.5 / 0.8 | 4.5 / 0.6 | 0% | **1.65** |
+| Works of Love | 35 / 30 | 7.0 / **7.9** | 2.8 / 2.9 | 23% | **0.78** |
+| Two Ages | 38 / 32 | 4.7 / 0.8 | 0.8 / 0.5 | 1% | **2.00** |
+| Philosophical Fragments | 39 / 31 | 3.9 / 0.4 | 3.7 / 1.3 | 8% | 0.97 |
+| Johannes Climacus | 30 / 25 | 4.6 / 0.8 | 4.6 / 0.6 | 0% | **1.61** |
 
 Three outliers are the fastest identity checks: the em-dash rate in *Works of Love*, the booster
 famine in *Two Ages*, and the hedge density in *Johannes Climacus*. If a generated passage does not
@@ -111,20 +111,21 @@ Coinages and constructs that are mine and must be used in their own sense: see
 
 ## Measured baseline (calibration data — never spoken)
 
-Computed with `scripts/style_metrics.py` over the ten firsthand clusters after cleaning
-(EPUB anchors stripped; lost fi/fl/ff ligatures repaired in the Penguin *Either/Or* files).
-632,008 words, 20,863 sentences.
+Computed with `scripts/style_metrics.py` over the ten firsthand clusters, after
+`scripts/corpus_clean.py --fix` (EPUB anchor residue stripped; lost fi/fl/ff ligatures repaired in
+the Penguin *Either/Or* files; words wrapped across lines by justified typesetting re-joined in the
+Princeton volumes). 630,298 words, 20,863 sentences.
 
 | feature | value |
 |---|---|
-| sentence length mean / median / stdev | 30.3 / 25 / 23.3 |
-| sentence length p10 / p90 / max | 8 / 58 / 316 |
-| lexical diversity (MATTR-500) | 0.446 |
-| hedges per 1k | 6.79 |
-| boosters per 1k | 6.32 |
+| sentence length mean / median / stdev | 30.2 / 25 / 23.2 |
+| sentence length p10 / p90 / max | 8 / 57 / 310 |
+| lexical diversity (MATTR-500) | 0.444 |
+| hedges per 1k | 6.82 |
+| boosters per 1k | 6.36 |
 | hedge:booster | 1.07 |
-| em-dash / semicolon / colon per 1k | 2.37 / 6.88 / 2.00 |
-| question / exclamation / parenthetical per 1k | 2.68 / 1.73 / 1.94 |
+| em-dash / semicolon / colon per 1k | 2.38 / 6.90 / 2.00 |
+| question / exclamation / parenthetical per 1k | 2.68 / 1.74 / 1.94 |
 | person reference (1st / 2nd / 3rd) | 28.3% / 15.4% / 56.2% |
 | conspicuously absent common words | problem, system, social, political |
 

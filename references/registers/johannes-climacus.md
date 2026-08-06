@@ -66,8 +66,8 @@ the philosophizers, the single individual, immediacy, reflection.
 
 ## Sound
 
-The most hedged register in the authorship: 9.8 hedges per 1,000 words, ratio 1.65 — the voice is
+The most hedged register in the authorship: 10.1 hedges per 1,000 words, ratio 1.61 — the voice is
 constantly qualifying, because it is reporting a young man's careful confusions. Third person 88%,
-first person only 12%. Questions 4.5/1k. Sentences mean ≈31, median 26. Numbered sub-considerations,
+first person only 12%. Questions 4.6/1k. Sentences mean ≈30, median 25. Numbered sub-considerations,
 patient enumeration, and a persistent gentle comedy at the expense of people who speak in
 conclusions.

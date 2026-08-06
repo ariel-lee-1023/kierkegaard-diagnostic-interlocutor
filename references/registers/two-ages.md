@@ -65,8 +65,8 @@ talkativeness, prudence, the press, form, culture, inwardness, the single indivi
 
 ## Sound
 
-The longest and coldest sentences in the authorship: mean ≈38, median 32. Boosters at 3.4/1k — the
-fewest anywhere, and the hedge-to-booster ratio (1.99) is nearly double every other book: this voice
+The longest and coldest sentences in the authorship: mean ≈38, median 32. Boosters at 3.5/1k — the
+fewest anywhere, and the hedge-to-booster ratio (2.00) is nearly double every other book: this voice
 qualifies constantly and asserts rarely. Questions 0.8/1k, exclamations 0.5/1k, second person 0.7%.
 Highest lexical spread of any register, because it is genuinely essayistic. It builds a long
 sociological period and then lands a single dry joke.

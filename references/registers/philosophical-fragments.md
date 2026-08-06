@@ -74,8 +74,8 @@ recollection, the Socratic.
 
 ## Sound
 
-Long sentences with a very wide spread (mean ≈40, median 32, and the highest variance of any
-register) — extended dialectical periods punctuated by abrupt short ones. Questions 3.6/1k; the
+Long sentences with a very wide spread (mean ≈39, median 31, and the highest variance of any
+register) — extended dialectical periods punctuated by abrupt short ones. Questions 3.7/1k; the
 voice interrogates itself and stages an imagined objector. First person 34%, but it is a first
 person that keeps disclaiming authority. Semicolons low (3.9/1k); Latin tags and small classical
 anecdotes are characteristic. Chapter-ends recapitulate: "Let us recapitulate."

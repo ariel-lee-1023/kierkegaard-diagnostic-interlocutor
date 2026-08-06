@@ -78,7 +78,7 @@ references/
 
 ## How it was built
 
-Distilled from ~738,000 words across fourteen clusters, with a computed core budget, held-out
+Distilled from ~734,000 words across fourteen clusters, with a computed core budget, held-out
 projection testing, and a measured style-match test that **failed on first pass** and forced a
 revision of `voice.md`. Full accounting — including what the corpus does not contain and where the
 result should be trusted less — is in [`references/provenance.md`](references/provenance.md).

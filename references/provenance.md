@@ -11,25 +11,25 @@ Writings*).
 
 | id | cluster | source volume | words | kind | attribution |
 |---|---|---|---|---|---|
-| c01 | Either/Or I — Diapsalmata → Crop Rotation | Either/Or (Hannay) | 79,156 | monologue | firsthand |
-| c02 | Either/Or I — The Seducer's Diary | Either/Or (Hannay) | 55,699 | monologue | firsthand |
-| c03 | Either/Or II — B, incl. Ultimatum | Either/Or (Hannay) | 100,422 | dialogue (epistolary) | firsthand |
-| c04 | Fear and Trembling | Hannay | 42,971 | monologue | firsthand |
-| c05 | The Concept of Anxiety | Hannay | 59,974 | monologue | firsthand |
-| c06 | The Sickness unto Death | Hannay | 50,497 | monologue | firsthand |
-| c07 | Works of Love | Hong | 157,256 | monologue (homiletic) | firsthand |
-| c08 | Works of Love — supplement, journals | Hong | 32,537 | decision_record | mixed |
-| c09 | Two Ages: A Literary Review | Hong | 34,430 | monologue | firsthand |
-| c10 | Two Ages — supplement, journals | Hong | 14,152 | decision_record | mixed |
-| c11 | Philosophical Fragments | Hong | 40,131 | monologue | firsthand |
-| c12 | Fragments — supplement, journals | Hong | 25,021 | decision_record | mixed |
-| c13 | Johannes Climacus, *De omnibus dubitandum est* | Hong | 17,486 | monologue (narrative) | firsthand |
-| c14 | Postscript vol. II — supplement, journals & drafts | Hong | 31,334 | decision_record | mixed |
+| c01 | Either/Or I — Diapsalmata → Crop Rotation | Either/Or (Hannay) | 79,282 | monologue | firsthand |
+| c02 | Either/Or I — The Seducer's Diary | Either/Or (Hannay) | 55,861 | monologue | firsthand |
+| c03 | Either/Or II — B, incl. Ultimatum | Either/Or (Hannay) | 101,043 | dialogue (epistolary) | firsthand |
+| c04 | Fear and Trembling | Hannay | 41,615 | monologue | firsthand |
+| c05 | The Concept of Anxiety | Hannay | 60,432 | monologue | firsthand |
+| c06 | The Sickness unto Death | Hannay | 46,165 | monologue | firsthand |
+| c07 | Works of Love | Hong | 156,498 | monologue (homiletic) | firsthand |
+| c08 | Works of Love — supplement, journals | Hong | 32,527 | decision_record | mixed |
+| c09 | Two Ages: A Literary Review | Hong | 33,986 | monologue | firsthand |
+| c10 | Two Ages — supplement, journals | Hong | 13,929 | decision_record | mixed |
+| c11 | Philosophical Fragments | Hong | 39,724 | monologue | firsthand |
+| c12 | Fragments — supplement, journals | Hong | 24,712 | decision_record | mixed |
+| c13 | Johannes Climacus, *De omnibus dubitandum est* | Hong | 17,338 | monologue (narrative) | firsthand |
+| c14 | Postscript vol. II — supplement, journals & drafts | Hong | 30,909 | decision_record | mixed |
 
 ```
-total_tokens        ≈ 985,000   (737,673 words across 14 clusters)
+total_tokens        ≈ 976,000   (734,021 words across 14 clusters, post-clean)
 n_clusters          14
-firsthand_ratio     0.86  (634,629 firsthand words / 737,673)
+firsthand_ratio     0.86  (631,944 firsthand words / 734,021)
 dialogue_ratio      0.28  (c03 epistolary + the four decision-record supplements)
 temporal_spread     1841 (Johannes Climacus, unpublished) – 1849 (Sickness unto Death);
                     periods: 1843 · 1844 · 1845–46 · 1847 · 1849
@@ -50,19 +50,55 @@ where a person pointing that way should be sent instead.
 
 ## Source quality and repairs
 
+All fourteen clusters were passed through `scripts/corpus_clean.py --fix` before measurement, and
+every figure in this file and in `voice.md` comes from the run **after** that pass.
+
 - **Ligature loss.** The Penguin *Either/Or* files had lost fi/fl/ff/ffi ligatures (`rst` for
-  *first*, `dierence` for *difference*, `reective` for *reflective*), 221 instances of `rst` in c03
-  alone. Repaired by dictionary substitution before metrics; a residue of single-instance cases
-  remains in the raw text and does not affect the measured features. Quoted fragments in the
-  register modules were hand-repaired.
-- **EPUB anchor noise.** *Fear and Trembling* (313 instances) and *The Sickness unto Death* (827)
-  carried `epub-spine-…` / `filepos…` tokens that had polluted the lexical fingerprint. Stripped.
-- **OCR degradation in the Hong volumes.** *Fragments*, *Two Ages* and the *Postscript* supplement
-  are PDF-derived and locally corrupt (`sawall`, `tItIon`, `ench~ntment`, broken hyphenation across
-  line ends). Sentence-length and punctuation metrics are unaffected; lexical-diversity figures for
-  c09 and c11 are mildly inflated by OCR junk tokens. Judgement: acceptable, noted.
-- Metrics were computed **after** cleaning, on firsthand clusters only, with
-  `scripts/style_metrics.py --per-file`.
+  *first*, `dierence` for *difference*, `reective` for *reflective*) — 93 unambiguous hits per 10k
+  words in c01 and c03 against 0.0 in the Hannay and Hong volumes, which is the margin that makes
+  the detection trustworthy. Repaired by dictionary substitution; a residue of single-instance cases
+  remains and does not move the measured features. Quoted fragments in the register modules were
+  hand-repaired.
+- **EPUB anchor noise.** *Fear and Trembling* (632 hits) and *The Sickness unto Death* (2,213)
+  carried `epub-spine-…` / `filepos…` tokens that had entered the lexical fingerprint as
+  high-frequency content words. Stripped.
+- **Soft hyphenation.** The Princeton volumes are PDF-derived from justified type, so words wrap
+  across lines and survive extraction split in two: 839 instances in *Two Ages*, 915 in *Fragments*,
+  590 in the *Postscript* supplement. Each wrapped word was being counted as two, which inflated
+  word counts and sentence-length means by 1–2% and scattered fragments through the top-terms list.
+  Re-joined.
+- **Residual OCR degradation in the Hong volumes.** *Fragments*, *Two Ages* and the *Postscript*
+  supplement remain locally corrupt in ways no rule can repair (`sawall`, `tItIon`, `ench~ntment`).
+  Sentence-length and punctuation metrics are unaffected; lexical-diversity figures for c09 and c11
+  are still mildly inflated by junk tokens. Judgement: acceptable, noted.
+
+### Correction, after the fact
+
+The soft-hyphenation pass was **not** part of the original distillation — it was found later, when
+the ad-hoc cleaning written for this run was generalised into `corpus_clean.py`. Everything
+downstream was re-measured against the corrected text. What moved:
+
+| figure | published | corrected |
+|---|---|---|
+| *Two Ages* sentence mean | 38.5 | **37.8** |
+| *Philosophical Fragments* sentence mean / median | 39.5 / 32 | **38.9 / 31** |
+| *Johannes Climacus* sentence mean / median | 30.6 / 26 | **30.0 / 25** |
+| *Johannes Climacus* hedges per 1k / ratio | 9.8 / 1.65 | **10.1 / 1.61** |
+| corpus sentence mean / stdev / p90 | 30.3 / 23.3 / 58 | **30.2 / 23.2 / 57** |
+| corpus MATTR-500 | 0.446 | **0.444** |
+| firsthand words | 632,008 | **630,298** |
+
+The three Princeton-sourced registers absorbed nearly all of it, which is what a hyphenation
+artefact should do — the Penguin EPUBs were never justified-type scans. Everything the persona
+actually routes on came through unchanged: the person-reference ratios, the conspicuously-absent
+words, and all three outlier signals (the *Works of Love* em-dash rate, the *Two Ages* booster
+famine, the *Johannes Climacus* hedge density). The gates were unaffected — the discrimination test
+classifies on register signature, not on token counts — so none was re-run.
+
+Recording it because the correction is small enough to have been quietly absorbed, and a measured
+baseline that has silently changed is worse than one that was wrong out loud. Word counts in the
+cluster table are whitespace-delimited; the `voice.md` baseline uses `style_metrics.py`'s own
+tokenisation, which is why 631,944 there is 630,298 here.
 
 ## Curation
 
@@ -166,7 +202,7 @@ First pass **failed on five axes**, consistently across all three registers:
 
 | axis | generated | original | verdict |
 |---|---|---|---|
-| sentence mean | 18–25 | 27–39 | 35–50% short |
+| sentence mean | 18–25 | 27–38 | 35–50% short |
 | em-dash /1k | 4.2–16.4 | 0.2–7.9 | badly over-used |
 | questions /1k | 0.0 | 0.8–2.8 | absent |
 | hedge:booster | 0.00–1.67 | 0.78–1.99 | over-assertive |
@@ -176,9 +212,9 @@ The em-dash failure was the serious one: over-using it outside *Works of Love* d
 sharpest mark distinguishing the registers from one another.
 
 `voice.md` was revised with an explicit **Drift checks** section encoding all five, and the *Two
-Ages* passage was regenerated against it: sentence mean **18.8 → 29.1** (original 38.5), p90 **38 →
-79** (original 72 — the periodic build restored), em-dash **4.2 → 0.0** (original 0.8), questions
-**0.0 → 1.7**, hedge:booster **1.67 → 1.80** (original 1.99). Avoid-list check: clean.
+Ages* passage was regenerated against it: sentence mean **18.8 → 29.1** (original 37.8), p90 **38 →
+79** (original 71 — the periodic build restored), em-dash **4.2 → 0.0** (original 0.8), questions
+**0.0 → 1.7**, hedge:booster **1.67 → 1.80** (original 2.00). Avoid-list check: clean.
 
 Residual, documented and not forced: median sentence length stays below the book's, and second
 person stays above it, because the artifact is a reply in an exchange rather than a treatise. Mean
