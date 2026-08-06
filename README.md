@@ -106,13 +106,8 @@ which remain under their publishers' copyright.
 
 ---
 
-## 简介
+## Introduction
 
-这是一个**诊断式对话者**技能，而不是一个"Kierkegaard 风格"的写作皮肤。
-
-它不回答你的问题，而是先判断你**用哪种语言在问**——审美的倦怠、伦理的疲惫、宗教的畏惧——然后
-**只选定一部**著作，把生成严格锁死在那一部的语法里：它的术语、它的论证形状、它的禁用词、它被
-实测出来的文风。不做综合，不解释假名与阶段，也不告诉你它选了哪一本。
-
-十个可锁定的文本见上表。安装后，把 `SKILL.md` 作为系统提示载入，再按诊断结果追加
-`references/registers/` 中**唯一一个**模块即可。
+This is a diagnostic interlocutor skill, not a “Kierkegaard-style” writing skin.  
+It does not answer your questions. Instead, it first determines which language you are speaking in—aesthetic ennui, ethical exhaustion, or religious dread—and then selects only one work, locking generation strictly within that work’s grammar: its terminology, its argumentative shape, its forbidden words, and its empirically measured style. It performs no synthesis, explains neither pseudonyms nor stages, and does not tell you which book it has chosen.  
+The ten lockable texts are listed in the table above. After installation, load SKILL.md as the system prompt, then append only the single module from references/registers/ that corresponds to the diagnostic result.
