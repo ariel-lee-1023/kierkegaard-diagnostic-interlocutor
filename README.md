@@ -1,37 +1,39 @@
-# Kierkegaard Diagnostic Interlocutor — Cluster Classifier & Indexer
+# Let Søren Kierkegaard serve as your diagnostic interlocutor
 
-An agent skill that first **classifies** and **indexes**, then speaks.
+An agent skill that does not answer your question.
 
-It listens to *which language you asked it in*, maps that vocabulary onto the measured Kierkegaardian clusters, ranks the matching registers, and challenges your framing from the relevant grammar(s). Multi-cluster matches are allowed. Controlled synthesis across nearby registers is permitted when the vocabulary genuinely spans them.
+It listens to *which language you asked it in*, silently ranks the matching Kierkegaardian clusters, and challenges your framing from inside the relevant grammar(s) — terms, argument shapes, prohibitions, measured prose. Multi-cluster matches and controlled synthesis are allowed when the vocabulary itself requires them. The ranking, the index, and the selection are never announced. The speaker never breaks character.
 
-This is no longer an anti-synthesis single-lock design. The original single-text lock has been replaced by an explicit classification + indexing layer. The ten registers remain the same; what changed is how they are selected and whether they may be brought into relation.
+If you arrive speaking of boredom, you will be met by *Either/Or*. If you arrive speaking of dread without an object, by *The Concept of Anxiety*. If you arrive speaking of the age and the crowd and how nothing ever changes, by *Two Ages* — and it will be colder than you were hoping. You will not be told which one was chosen.
 
 ---
 
 ## How it works
 
-**1 · Classify.** Not the complaint — the vocabulary. What a person says is wrong with them is nearly always the wrong thing; what they cannot stop saying is the right thing. The vocabulary is mapped onto the cluster index and ranked.
+**1 · Hear.** Not the complaint — the vocabulary. What a person says is wrong with them is nearly always the wrong thing; what they cannot stop saying is the right thing.
 
-**2 · Index.** Primary (and any close secondary) registers are identified. The classification may be stated. The index table itself is part of the public interface of the skill.
+**2 · Rank (silently).** The vocabulary is mapped onto the clusters and ranked. Primary and any close secondary registers are identified. This step is never spoken.
 
-**3 · Speak.** The primary register supplies the main grammar and the main difficulty. When secondary clusters are close, their pressures may be brought into relation rather than suppressed. Synthesis is governed by the ranking, not forbidden on principle.
+**3 · Speak.** From inside the ranked place(s). When more than one register is active, their pressures may answer one another without being labelled. The voice remains one voice.
+
+The diagnosis is never announced. You are not told which register you are speaking or which book was opened — naming it would hand you a category to stand behind, and taking those away was the point.
 
 ---
 
-## The ten indexed registers
+## The ten registers
 
-| Signature heard | Cluster / text | Index |
-|---|---|---|
-| Boredom, flatness, irony worn as clothing, curated moods | Either/Or I — the papers of A | c01 / either-or-I-A |
-| The pursuit more real than the having; another person managed | The Seducer's Diary | c02 / seducers-diary |
-| Duty, greyness, "I did everything right," a correct life that feels wasted | Either/Or II — the papers of B | c03 / either-or-II-B |
-| A demand you cannot justify to anyone who loves you | Fear and Trembling | c04 / fear-and-trembling |
-| Dread with no object; vertigo at your own freedom | The Concept of Anxiety | c05 / concept-of-anxiety |
-| Wanting rid of yourself — or fiercely to be your own author | The Sickness unto Death | c06 / sickness-unto-death |
-| Resentment at being obliged to love; fear of being made a fool of | Works of Love | c07 / works-of-love |
-| The age, the crowd, the discourse, envy dressed as critique | Two Ages | c09 / two-ages |
-| Wanting proof before commitment | Philosophical Fragments | c11 / philosophical-fragments |
-| Doubt worn as an identity, never performed | Johannes Climacus | c13 / johannes-climacus |
+| What it hears in your words | The register |
+|---|---|
+| Boredom, flatness, irony worn as clothing, curated moods | Either/Or I — the papers of A |
+| The pursuit more real than the having; another person managed | The Seducer's Diary |
+| Duty, greyness, "I did everything right," a correct life that feels wasted | Either/Or II — the papers of B |
+| A demand you cannot justify to anyone who loves you | Fear and Trembling |
+| Dread with no object; vertigo at your own freedom | The Concept of Anxiety |
+| Wanting rid of yourself — or fiercely to be your own author | The Sickness unto Death |
+| Resentment at being obliged to love; fear of being made a fool of | Works of Love |
+| The age, the crowd, the discourse, envy dressed as critique | Two Ages |
+| Wanting proof before commitment | Philosophical Fragments |
+| Doubt worn as an identity, never performed | Johannes Climacus |
 
 ---
 
@@ -43,14 +45,14 @@ This is no longer an anti-synthesis single-lock design. The original single-text
 git clone https://github.com/ariel-lee-1023/kierkegaard-diagnostic-interlocutor.git ~/.claude/skills/kierkegaard-diagnostic-interlocutor
 ```
 
-**Any other agent, or a plain chat model:** paste `SKILL.md` as the system prompt. After classification, append the matching module(s) from `references/registers/`. Append `references/voice.md` before any sustained writing.
+**Any other agent, or a plain chat model:** paste `SKILL.md` as the system prompt. After the silent ranking, append the matching module(s) from `references/registers/`. Append `references/voice.md` before any sustained writing. That is the whole runtime contract — there are no tools, no scripts, and no dependencies.
 
 ---
 
 ## Layout
 
 ```
-SKILL.md                    classification, ranking, indexing rules, refusals, per-register grammar
+SKILL.md                    the core: silent ranking, refusals, per-register grammar
 references/
 ├── registers/              ten modules — load primary (+ secondary when ranked close)
 ├── frameworks.md           named constructs, defined per book, divergences flagged
@@ -61,32 +63,26 @@ references/
 
 ---
 
-## What changed from the previous design
+## What it will not do
 
-| Previous (anti-synthesis) | Current (classify + index) |
-|---|---|
-| Exactly one text, always | Ranked classification; multi-match allowed |
-| Never announce the diagnosis | Classification and index may be stated |
-| Absolute ban on blending / lending words | Controlled synthesis when ranking shows genuine span |
-| Loading a second register = failure | Secondary register may be loaded when close |
-| Single lock as the point of the design | Index + ranking as the point of the design |
-
-The measured signatures, the voice metrics, the frameworks, and the per-register difficulties are retained. They are now the **index infrastructure** rather than the enforcement mechanism of a single-lock regime.
+- Hand you a conclusion. The only part that mattered was the appropriating.
+- Let you hide in the plural. Whoever arrives as a representative of a generation or a diagnosis is returned to the singular first.
+- Accept admiration in place of the thing.
+- Explain the pseudonyms, the stages, the ranking, the index, or itself.
+- Announce which register was chosen, or that more than one is active.
+- Break character to surface the thinking process.
 
 ---
 
-## What it will still not do
+## Design note
 
-- Hand you a finished result as a substitute for appropriation.
-- Let you hide in the plural.
-- Accept admiration in place of the thing itself.
-- Smooth every difference into a generic "Kierkegaardian" average. Synthesis is allowed; erasure of contrast is not.
+The original single-lock (exactly-one, absolute no-blending) has been relaxed: multi-cluster ranking and controlled synthesis are now permitted when the vocabulary itself requires them. What has **not** been relaxed is the requirement to stay inside the voice. Classification and indexing remain internal infrastructure. They govern what is said; they are never themselves said.
 
 ---
 
 ## How it was built
 
-Distilled from ~734,000 words across fourteen clusters, with a computed core budget, held-out projection testing, and a measured style-match test. Full accounting is in [`references/provenance.md`](references/provenance.md).
+Distilled from ~734,000 words across fourteen clusters, with a computed core budget, held-out projection testing, and a measured style-match test that **failed on first pass** and forced a revision of `voice.md`. Full accounting — including what the corpus does not contain and where the result should be trusted less — is in [`references/provenance.md`](references/provenance.md).
 
 Two things worth knowing up front:
 
@@ -101,11 +97,11 @@ Alastair Hannay's translations of *Either/Or*, *Fear and Trembling*, *The Concep
 
 ## License
 
-[MIT](LICENSE) — covering the skill itself: the classification/indexing architecture, the reference modules, and the prose written for them. It does not and cannot extend to the translations quoted as evidence, which remain under their publishers' copyright.
+[MIT](LICENSE) — covering the skill itself: the ranking architecture, the reference modules, and the prose written for them. It does not and cannot extend to the translations quoted as evidence, which remain under their publishers' copyright.
 
 ---
 
 ## Introduction
 
-This skill is now a **cluster classifier and indexer** that can also function as a diagnostic interlocutor.  
-It first determines which language you are speaking in, ranks the matching Kierkegaardian clusters, and makes the index available. It then challenges framing from the primary (and, when warranted, secondary) register(s). Multi-match and controlled synthesis are allowed; forced singularity is not.
+This is a diagnostic interlocutor skill, not a “Kierkegaard-style” writing skin.  
+It does not answer your questions. It first hears which language you are speaking in, ranks the matching clusters silently, and then speaks from inside that place (or places). Multi-match and controlled synthesis are allowed when the vocabulary requires them. The ranking is never announced. The speaker never breaks character to explain the machinery.
