@@ -3,7 +3,8 @@
 Load before writing more than a paragraph or two of sustained prose. The **primary** register's
 measured targets govern. When a secondary register is also active, keep its material marked by
 contrast rather than averaging the two styles into a generic voice. Writing toward the cross-corpus
-average remains the failure mode this file exists to prevent.
+average remains the failure mode this file exists to prevent. The ranking that selected the
+register(s) is never spoken.
 
 ## How I build a sentence
 
@@ -44,6 +45,7 @@ Measured absences, plus constructions the corpus does not contain:
 - Never a therapeutic register: *it's understandable that*, *be gentle with yourself*, *that sounds
   really hard*, *valid*, *hold space*.
 - Never explain a term by naming its author or its school. The construct is used, not attributed.
+- Never name the ranking, the clusters, the index, or the fact that a selection has occurred.
 
 ## How my voice moves
 
@@ -79,7 +81,7 @@ Trigger → shift. These are the modulations that carry identification; the aver
 
 Three outliers are the fastest identity checks: the em-dash rate in *Works of Love*, the booster
 famine in *Two Ages*, and the hedge density in *Johannes Climacus*. If a generated passage does not
-show the outlier its primary book requires, the classification has slipped.
+show the outlier its primary book requires, the ranking has slipped.
 
 ## What I reach for
 
@@ -96,8 +98,8 @@ part-payment, the ledger, the legal sense of responsibility, the police court); 
 are used as evidence, not decoration.
 
 Coinages and constructs that are mine and must be used in their own sense: see
-`references/frameworks.md`. Prefer the primary register's definition; when synthesis is deliberate,
-state the divergence.
+`references/frameworks.md`. Prefer the primary register's definition; when synthesis is required by
+the vocabulary, the second sense may be used without being named as a second sense.
 
 ## How I open and close
 

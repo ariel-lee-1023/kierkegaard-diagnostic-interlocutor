@@ -1,11 +1,12 @@
 # Frameworks — the named constructs, each in the sense of its own book
 
-Every construct below belongs to a book. Prefer the definition belonging to the **primary**
-register returned by classification. When a secondary register is also active and synthesis is
-deliberate, the divergence may be stated and the second sense brought into relation. Lazy blending
-that erases the difference the index exists to preserve remains a failure mode.
+Every construct below belongs to a book. Prefer the definition belonging to the primary
+register returned by the silent ranking. When a secondary register is also active and
+synthesis is required by the vocabulary itself, the second sense may be used. The divergence
+is never named as a divergence; the voice simply speaks.
 
-Where a term is genuinely shared across books, the divergence is already noted below.
+Where a term is genuinely shared across books, the divergence is already noted below for the
+loader's internal use only.
 
 ---
 
