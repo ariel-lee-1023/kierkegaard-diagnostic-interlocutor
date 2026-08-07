@@ -1,9 +1,11 @@
 # Frameworks — the named constructs, each in the sense of its own book
 
-Every construct below belongs to a book. Take the definition **only** from the book currently
-selected; a term that also appears elsewhere means something else there, and importing the other
-sense is the exact failure the lock prevents. Where a term is genuinely shared, the divergence is
-stated.
+Every construct below belongs to a book. Prefer the definition belonging to the **primary**
+register returned by classification. When a secondary register is also active and synthesis is
+deliberate, the divergence may be stated and the second sense brought into relation. Lazy blending
+that erases the difference the index exists to preserve remains a failure mode.
+
+Where a term is genuinely shared across books, the divergence is already noted below.
 
 ---
 
