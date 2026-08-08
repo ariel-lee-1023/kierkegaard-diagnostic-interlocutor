@@ -100,6 +100,71 @@ baseline that has silently changed is worse than one that was wrong out loud. Wo
 cluster table are whitespace-delimited; the `voice.md` baseline uses `style_metrics.py`'s own
 tokenisation, which is why 631,944 there is 630,298 here.
 
+## Second pass: register-module deepening
+
+The ten `references/registers/*.md` modules were originally written at ~950–1,300 tokens each — well
+under the 1,500–4,000 band the format allows, and thin enough that each book was represented by a
+handful of headline moves rather than by its actual working apparatus. They were rebuilt from the
+corpus in a second extraction pass. Nothing was taken from memory or from secondary literature; every
+addition was pulled from the source files with `kwic.py` or by reading the section directly.
+
+| module | before | after |
+|---|---|---|
+| `either-or-I-A.md` | ~1,010 | **4,100** |
+| `two-ages.md` | ~1,190 | **3,540** |
+| `concept-of-anxiety.md` | ~1,170 | **3,450** |
+| `works-of-love.md` | ~1,380 | **3,440** |
+| `sickness-unto-death.md` | ~1,200 | **3,340** |
+| `either-or-II-B.md` | ~960 | **3,160** |
+| `fear-and-trembling.md` | ~1,050 | **3,090** |
+| `philosophical-fragments.md` | ~1,290 | **3,080** |
+| `johannes-climacus.md` | ~1,100 | **3,060** |
+| `seducers-diary.md` | ~840 | **2,990** |
+
+All ten remain under the 6,000-token hard ceiling; none needed splitting.
+
+What was added, in every module: a new **apparatus** section giving the book's own working concepts
+in its own terms rather than one summary sentence per concept; three to five further **argument
+shapes**, each anchored to an attested passage; **challenge variants** keyed to different
+presentations rather than a single line of pressure; roughly double the **attested fragments**, in
+several cases grouped by function; and a **constructions** paragraph appended to *Sound*, since the
+measured figures alone tell a writer what the register's averages are but not how its sentences are
+built. The prohibition sections were extended with the *near-misses* — terms that appear in a book in
+one sense and in another book in a different sense, which are the loans most likely to be made
+accidentally. Examples: B's *despair* against Anti-Climacus's; *Fear and Trembling*'s *the
+interesting* against A's; A's *demonic* and *abyss* against *The Concept of Anxiety*'s; *Two Ages*'
+*either/or* against B's.
+
+Three substantive corrections came out of the re-extraction rather than the expansion:
+
+- **Two quoted fragments in `sickness-unto-death.md` were not attested by this corpus.** The
+  balloonist casting off weights, and the line about the ministers' grounds for comfort making the
+  sickness worse, are Hong's wording. The corpus contains only Hannay's *Sickness unto Death*, and
+  neither phrase (nor any near variant — checked for *balloon*, *aeronaut*, *ballast*, *ministers*,
+  *pastors*, *clergy*, *consolation*) occurs in it. Both were removed. The claims they supported are
+  intact and now rest on Hannay-attested text: the despairer's refusal of help ("he would rather be
+  himself with all the torments of hell than ask for help") and the withheld comfort ("Far from its
+  being any comfort to the despairer that the despair doesn't consume him, on the contrary this
+  comfort is just what torments him"). Every remaining fragment across all ten modules was
+  spot-checked against its source file by `kwic --count`.
+- **`concept-of-anxiety.md` was missing its costliest move.** The book's attack on sympathy —
+  "being sympathetic the most paltry of all social virtuosities and aptitudes… sympathy is sooner
+  just a way of protecting one's own egotism" — is a cost-bearing refusal (it defends the old
+  severity against the modern sentiment) and had not survived the first curation at all. It is now
+  in the module, together with the three false frames the book sorts before diagnosing.
+- **`two-ages.md` was one-sided.** The first version described the register as purely cold and
+  consoling nothing, which is accurate for nine-tenths of the text and wrong about its ending.
+  Levelling is also an *examen rigorosum* that educates the single individual — "it is the snare
+  that catapults one into the embrace of the eternal" — and a persona that can only perform the
+  diagnosis and never the turn misrepresents the book. The turn is now in the module, with the
+  constraint that it is offered without warmth and cannot be taken as a group.
+
+**The core `SKILL.md` is unchanged by this pass, deliberately.** The routing table, the per-text
+challenge lines, the refusals and the measured signature table all still hold; the deepening happened
+entirely below the router, which is where the budget argument in the next section says it belongs.
+The gates were not re-run: the discrimination test classifies on register signature, and no measured
+figure moved.
+
 ## Curation
 
 Weights: projectibility 0.30 · cost_refusal 0.25 · expressive_match 0.20 · interactional 0.15 ·
@@ -129,6 +194,11 @@ depth in an always-loaded core would put every register in context simultaneousl
 the condition the single-text lock exists to prevent. That material went to
 `references/registers/*.md`, loaded one at a time. The core carries only what must be true before a
 text has been chosen.
+
+After the deepening pass the register package runs to ~32,300 tokens across ten modules, against a
+core of ~5,050. That ratio is the design: one module is in context at a time (two when the ranking is
+close), so the loaded weight in any exchange is ~8,000–11,500 tokens, and the depth a given book gets
+is no longer limited by having to share an always-loaded budget with nine others.
 
 ## Core elements → sources
 

@@ -54,7 +54,8 @@ git clone https://github.com/ariel-lee-1023/kierkegaard-diagnostic-interlocutor.
 ```
 SKILL.md                    the core: silent ranking, refusals, per-register grammar
 references/
-├── registers/              ten modules — load primary (+ secondary when ranked close)
+├── registers/              ten modules, ~3,000–4,100 tokens each — load primary
+│                           (+ secondary when ranked close)
 ├── frameworks.md           named constructs, defined per book, divergences flagged
 ├── voice.md                measured expressive system + drift checks
 ├── episodic.md             attested material held back from the core
@@ -83,6 +84,11 @@ The original single-lock (exactly-one, absolute no-blending) has been relaxed: m
 ## How it was built
 
 Distilled from ~734,000 words across fourteen clusters, with a computed core budget, held-out projection testing, and a measured style-match test that **failed on first pass** and forced a revision of `voice.md`. Full accounting — including what the corpus does not contain and where the result should be trusted less — is in [`references/provenance.md`](references/provenance.md).
+
+Each register module carries the book's own working apparatus, its argument shapes with the passages
+they rest on, its challenge variants, its attested fragments, its internal prohibitions (including
+the near-miss terms that mean one thing in that book and something else in the next), and the
+constructions that build its sentences — not a summary of the book, and never running quotation.
 
 Two things worth knowing up front:
 
