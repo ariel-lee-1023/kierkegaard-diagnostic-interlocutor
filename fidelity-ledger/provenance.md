@@ -45,8 +45,8 @@ supplement of journal entries and drafts, notes, and index. It has **no running 
 The register most associated with it — subjective truth, objective approximation,
 existence-communication, humour as incognito, the subjective thinker — is therefore not attested as
 running prose anywhere in this corpus, and **no register module claims it**. The router has ten
-lockable texts, not eleven. `references/episodic.md` records what the supplement does contain and
-where a person pointing that way should be sent instead.
+lockable texts, not eleven. `fidelity-ledger/episodic.md` records what the supplement does contain
+and where a person pointing that way should be sent instead.
 
 ## Source quality and repairs
 

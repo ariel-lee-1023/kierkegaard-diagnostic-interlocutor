@@ -54,14 +54,15 @@ git clone https://github.com/ariel-lee-1023/kierkegaard-diagnostic-interlocutor.
 ```
 kierkegaard-diagnostic-interlocutor/
 ├── SKILL.md                    # the core: silent ranking, refusals, per-register grammar
-├── references/                 # host-agent-facing, loaded at runtime, never contains provenance
+├── references/                 # host-agent-facing, loaded at runtime, never contains
+│   │                           #   provenance or episodic material
 │   ├── registers/              # ten modules, ~3,000–4,100 tokens each — load primary
 │   │                           #   (+ secondary when ranked close)
 │   ├── frameworks.md           # named constructs, defined per book, divergences flagged
-│   ├── voice.md                # measured expressive system + drift checks
-│   └── episodic.md             # attested material held back from the core
+│   └── voice.md                # measured expressive system + drift checks
 ├── fidelity-ledger/            # human-facing, never loaded by the host agent
-│   └── provenance.md           # sources, curation, gate results, limitations
+│   ├── provenance.md           # sources, curation, gate results, limitations
+│   └── episodic.md             # attested material held back from the core
 ├── LICENSE
 └── README.md
 ```
