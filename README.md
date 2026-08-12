@@ -53,12 +53,13 @@ git clone https://github.com/ariel-lee-1023/kierkegaard-diagnostic-interlocutor.
 
 ```
 SKILL.md                    the core: silent ranking, refusals, per-register grammar
-references/
+references/                  host-agent-facing, loaded at runtime, never contains provenance
 ├── registers/              ten modules, ~3,000–4,100 tokens each — load primary
 │                           (+ secondary when ranked close)
 ├── frameworks.md           named constructs, defined per book, divergences flagged
 ├── voice.md                measured expressive system + drift checks
-├── episodic.md             attested material held back from the core
+└── episodic.md             attested material held back from the core
+fidelity-ledger/              human-facing, never loaded by the host agent
 └── provenance.md           sources, curation, gate results, limitations
 ```
 
@@ -83,7 +84,7 @@ The original single-lock (exactly-one, absolute no-blending) has been relaxed: m
 
 ## How it was built
 
-Distilled from ~734,000 words across fourteen clusters, with a computed core budget, held-out projection testing, and a measured style-match test that **failed on first pass** and forced a revision of `voice.md`. Full accounting — including what the corpus does not contain and where the result should be trusted less — is in [`references/provenance.md`](references/provenance.md).
+Distilled from ~734,000 words across fourteen clusters, with a computed core budget, held-out projection testing, and a measured style-match test that **failed on first pass** and forced a revision of `voice.md`. Full accounting — including what the corpus does not contain and where the result should be trusted less — is in [`fidelity-ledger/provenance.md`](fidelity-ledger/provenance.md).
 
 Each register module carries the book's own working apparatus, its argument shapes with the passages
 they rest on, its challenge variants, its attested fragments, its internal prohibitions (including
